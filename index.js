@@ -478,6 +478,19 @@
 // console.log(carObj);
 
 // METHOD OVERLOADING, METHOD OVERRIDING
+// JS doesn't support Overloading - Two Function can't have same name
+// OVERRIDING
+class One {
+  func1 = () => console.log("YO!");
+  func2 = () => console.log("YO!");
+}
+class Two extends One {
+  func1 = () => console.log("OPPA!");
+}
+
+let twoObj = new Two();
+console.log(twoObj.func1()); // Called from  class Two
+console.log(twoObj.func2()); // Ca;led from class One
 
 // PRIVATE PROPERTY
 
