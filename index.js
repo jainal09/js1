@@ -450,7 +450,8 @@
 // console.log(user.valid);
 
 // ITERATORS
-let log = console.log;
+// https://livecodestream.dev/post/how-to-use-generator-and-yield-in-javascript/
+// let log = console.log;
 // function* myFunc22(array) {
 //   // Generator Function that spits out values (iterable)
 //   for (let i of array) {
@@ -536,5 +537,34 @@ let log = console.log;
 // console.log(twoObj.func2()); // Ca;led from class One
 
 // PRIVATE PROPERTY
+class MyClass {
+  myVar = 1212;
+  a = function () {
+    console.log(this.myVar);
+  };
+  #privateAccessor = "private stuff"; // Wont be part of the object cannot be called by the instance obj below
+  myFunc = () => {
+    console.log(this.#privateAccessor); // Can be accessed within the class
+  };
+  #privateFunc() {
+    console.log("This is a private function");
+  }
+  privateCaller() {
+    console.log(this.#privateFunc());
+  }
+}
+let clasObj = new MyClass();
+console.log(clasObj); // Because class are still obj
+console.log(clasObj.myFunc()); // Because class are still obj
+// console.log(clasObj.#privateFunc()); // cannot be called
+console.log(clasObj.privateCaller());
 
-// ABSTRACTION
+class Child extends MyClass {
+  myfunc2() {
+    console.log(this.myVar);
+    // console.log(this.#privateAccessor); // Will get error cannot be accessed
+  }
+}
+
+let childObj = new Child();
+console.log(childObj.myfunc2());
