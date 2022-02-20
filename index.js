@@ -537,34 +537,34 @@
 // console.log(twoObj.func2()); // Ca;led from class One
 
 // PRIVATE PROPERTY
-class MyClass {
-  myVar = 1212;
-  a = function () {
-    console.log(this.myVar);
-  };
-  #privateAccessor = "private stuff"; // Wont be part of the object cannot be called by the instance obj below
-  myFunc = () => {
-    console.log(this.#privateAccessor); // Can be accessed within the class
-  };
-  #privateFunc() {
-    console.log("This is a private function");
-  }
-  privateCaller() {
-    console.log(this.#privateFunc());
-  }
-}
-let clasObj = new MyClass();
-console.log(clasObj); // Because class are still obj
-console.log(clasObj.myFunc()); // Because class are still obj
-// console.log(clasObj.#privateFunc()); // cannot be called
-console.log(clasObj.privateCaller());
+// class MyClass {
+//   myVar = 1212;
+//   a = function () {
+//     console.log(this.myVar);
+//   };
+//   #privateAccessor = "private stuff"; // Wont be part of the object cannot be called by the instance obj below
+//   myFunc = () => {
+//     console.log(this.#privateAccessor); // Can be accessed within the class
+//   };
+//   #privateFunc() {
+//     console.log("This is a private function");
+//   }
+//   privateCaller() {
+//     console.log(this.#privateFunc());
+//   }
+// }
+// let clasObj = new MyClass();
+// console.log(clasObj); // Because class are still obj
+// console.log(clasObj.myFunc()); // Because class are still obj
+// // console.log(clasObj.#privateFunc()); // cannot be called
+// console.log(clasObj.privateCaller());
 
-class Child extends MyClass {
-  myfunc2() {
-    console.log(this.myVar);
-    // console.log(this.#privateAccessor); // Will get error cannot be accessed
-  }
-}
+// class Child extends MyClass {
+//   myfunc2() {
+//     console.log(this.myVar);
+//     // console.log(this.#privateAccessor); // Will get error cannot be accessed
+//   }
+// }
 
-let childObj = new Child();
-console.log(childObj.myfunc2());
+// let childObj = new Child();
+// console.log(childObj.myfunc2());
