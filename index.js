@@ -406,14 +406,14 @@
 // console.log(sum2, multiply2, division2); // 5 6 0.6666666666666666
 
 // Object Destructuring
-const myPersonObj1 = {
-  name: "John",
-  age: 22,
-  address: {
-    city: "Doe City",
-    state: "Doe State",
-  },
-};
+// const myPersonObj1 = {
+//   name: "John",
+//   age: 22,
+//   address: {
+//     city: "Doe City",
+//     state: "Doe State",
+//   },
+// };
 
 // const { name, age } = myPersonObj; // obj destructuring
 // console.log(name, age); // John 22
